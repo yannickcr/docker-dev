@@ -32,13 +32,6 @@ RUN git clone https://github.com/yannickcr/dotfiles $HOME/.dotfiles && \
     mv $HOME/.dotfiles/unix/.zshrc $HOME/.zshrc && \
     rm -rf $HOME/.dotfiles
 
-# NVM
-RUN git clone https://github.com/creationix/nvm.git $HOME/.nvm && \
-    cd $HOME/.nvm && \
-    git checkout `git describe --abbrev=0 --tags` && \
-    echo "source $HOME/.nvm/nvm.sh" >> $HOME/.zshrc && \
-    echo "nvm use stable" >> $HOME/.zshrc
-
 # Workspace
 RUN mkdir -p $HOME/workspace
 

@@ -4,6 +4,10 @@ MAINTAINER Yannick Croissant <yannick.croissant@gmail.com>
 # Packages
 RUN apt-get update && \
     apt-get -y install openssh-server python make g++ wget build-essential git curl zsh vim sudo
+    
+# Node.js
+RUN curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash - && \
+    sudo apt-get install -y nodejs
 
 # SSH
 RUN mkdir -p /var/run/sshd && \
